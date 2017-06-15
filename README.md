@@ -10,9 +10,7 @@
 
 [Intro to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
 
-### Build
-
-#### 1. Intro to HTML/SVG tags & replicate in D3
+### 1. Intro to HTML/SVG tags & replicate in D3
 
 * Hello World in D3
   * How to add stuff to a page
@@ -34,7 +32,7 @@
   * attributes: x1, x2, y1, y2
   * style: stroke width & stroke
 
-#### 2. Intro to data-driven concept
+### 2. Intro to data-driven concept
 
 * Use array to generate paragraphs
   * Introduce .selectAll
@@ -82,10 +80,20 @@
 ### 4. Scales - Range & Domain
 
 * Introduce linear scale
-  * .scaleLinear
-  * .domain 1-5
-  * .range  0-100
+  * Create xScale using:
+    * .scaleLinear
+    * .domain 1-5
+    * .range  0-100
   * Edit circles
     * Remove transitions
     * cx function returns xscale(d)
-  * Change range 0-200
+  * Hardcode range 0-500 to match svg width
+  * Dynamically get width from d3 svg element & update range
+  * Update CSS width to show scale changing
+  * This is basic resizing and shows how you can create a dynamic graph to work on multiple screen sizes
+  * Create yScale using same data point
+  * Usually we'd have more than one datapoint
+  
+### 5. Arrray of Objects (Nested Data)
+
+* Create object array
