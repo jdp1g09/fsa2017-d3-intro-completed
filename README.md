@@ -84,18 +84,23 @@
     * .scaleLinear
     * .domain 1-5
     * .range  0-100
+    * Introduce padding
+      * Add padding to range to give a margin around our datapoints
   * Edit circles
     * Remove transitions
     * cx function returns xscale(d)
-  * Replace hardcoded domain with d3.min, d3.max of array
   * Hardcode range 0-500 to match svg width
   * Dynamically get width from d3 svg element & update range
   * Update CSS width to show scale changing
   * This is basic resizing and shows how you can create a dynamic graph to work on multiple screen sizes
+  * Replace hardcoded domain with d3.min, d3.max of array
   * Create yScale using same data point
-  * Introduce padding
-    * Add padding to range to give a margin around our datapoints
   * Usually we'd have more than one datapoint
+  * Introduce ordinal scale and compare to continuous scale
+    * Create color scale
+       * .scaleOrdinal(d3.schemeCategory10)
+    * Change fill to use color(i)
+    * Keep color transitions
   
 ### 5. Arrray of Objects (Nested Data)
 
@@ -103,9 +108,60 @@
   * eg. [{x: 1, y: 2}]
   * Create similar svg to previous task
   * .data(objectArray)
-  * Invert yScale to format graph as expected - so origin changes from top left to bottom left
-  * d3.min and d3.max with nested objects
-    * Pass a function as second parameter
-  * Change cx and cy functions to use d.x, d.y
+  * Update scales
+    * Set mins to 0
+    * Set max to use d3.max
+  * Add transition from xScale(d.x)
+  * Invert yScale to format graph as expected
+    * Origin changes from top left to bottom left
+    * See transition origin change on chart
   
 > ~ 40 mins - 1 hour
+
+### 6. Groups
+
+* Introduce groups
+  * Create group for circle to sit inside
+    * Create group variable for each data element
+    * .append(g)
+    * Add class datapoint
+    * selectAll will select everything - so sensible to add a class so you don't get mixed up
+    * Add attribute transform to translate as groups don't have cx, cy attributes
+  * Add transform transition to groups instead of circle
+  * Append circle to each group
+    * Remove cx, cy from circle
+  * Should look the same, but HTML will be different
+  * Append text to each group
+    * Set text to hello world
+    * Set text to x, y coords using function(d, i)
+    * Style text to be in readable position
+      * Set text-anchor to end
+      * Set transform to translate -10, -5
+  * Add x, y coords to each datapoint on graph
+
+### 7. Axes
+
+* Introduce Axes
+  * Create xAxis
+    * .axisBottom(xScale) - NOTE: labels on bottom of axis, not that it's on bottom of chart
+  * Add axis to chart
+    * .append(g).call(xAxis)
+    * .attr(transform, ...)
+    * .call(xAxis)
+  * Change to .axisTop to show difference
+  * Create yAxis
+    * .axisLeft(yScale)
+  
+### 8. Interaction  
+  
+* Introduce tooltips
+  * Add text style opacity 0
+  * Introduce .on() on circle
+    * .on(mouseenter, function(d, i)
+    * console.log(d)
+    * Show interaction and output in console
+    * Select text by selceting parent, then selectAll text
+    * Set opacity to 1
+  * Introduce .on(mouseout)
+    * Set opacity back to 0
+  * Add transition on opacity
