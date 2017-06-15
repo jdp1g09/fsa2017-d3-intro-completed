@@ -65,8 +65,8 @@
 * Transitions for circles  
   * Transition circle radius: 2 seconds
   * Transition cy: 2 seconds
-
-  20 - 30 minutes
+  
+> ~ 20 - 30 minutes
 
 ### 3. Filtering
 
@@ -87,13 +87,25 @@
   * Edit circles
     * Remove transitions
     * cx function returns xscale(d)
+  * Replace hardcoded domain with d3.min, d3.max of array
   * Hardcode range 0-500 to match svg width
   * Dynamically get width from d3 svg element & update range
   * Update CSS width to show scale changing
   * This is basic resizing and shows how you can create a dynamic graph to work on multiple screen sizes
   * Create yScale using same data point
+  * Introduce padding
+    * Add padding to range to give a margin around our datapoints
   * Usually we'd have more than one datapoint
   
 ### 5. Arrray of Objects (Nested Data)
 
 * Create object array
+  * eg. [{x: 1, y: 2}]
+  * Create similar svg to previous task
+  * .data(objectArray)
+  * Invert yScale to format graph as expected - so origin changes from top left to bottom left
+  * d3.min and d3.max with nested objects
+    * Pass a function as second parameter
+  * Change cx and cy functions to use d.x, d.y
+  
+> ~ 40 mins - 1 hour
