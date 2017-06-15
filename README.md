@@ -165,3 +165,5 @@
   * Introduce .on(mouseout)
     * Set opacity back to 0
   * Add transition on opacity
+
+> ~ 2 hours
