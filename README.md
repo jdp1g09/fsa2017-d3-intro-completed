@@ -1,6 +1,15 @@
-# Data Stream D3 Intro
+# data-stream-d3-intro-completed
 
-### Agenda
+Completed D3 Intro Workshop
+
+This workshop contained eight tasks.
+
+### To view the code:
+
+1. Open index.html in your browser.
+2. Open index.html and functions.js in your text editor.
+
+### Tasks
 
 1. Intro to HTML/SVG tags & D3
 2. Intro to data-driven concept
